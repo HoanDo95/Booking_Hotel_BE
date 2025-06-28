@@ -113,7 +113,7 @@ class SystemService {
         { $sort: { "_id.year": 1, "_id.month": 1 } },
       ]);
 
-      // Booking statistics
+      // Booking static
       const bookingsByMonth = await Booking.aggregate([
         {
           $group: {
@@ -255,7 +255,7 @@ class SystemService {
     try {
       const logRequestList = await LogRequest.find({});
       if (logRequestList.length < 1)
-        throw new Error("Không tìm thấy request !");
+        throw new Error("Không tìm thấy yêu cầu !");
       return logRequestList;
     } catch (e) {
       throw new Error(e);
