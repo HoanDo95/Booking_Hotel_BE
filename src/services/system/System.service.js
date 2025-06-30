@@ -223,7 +223,7 @@ class SystemService {
       throw new Error(e);
     }
   }
-
+// fix error update
   async updateRoute(dataReq) {
     try {
       const { id, path, method, requireToken } = dataReq;
@@ -261,7 +261,7 @@ class SystemService {
       throw new Error(e);
     }
   }
-
+// fix dashboard
   async getDashBoard() {
     try {
       // Basic counts

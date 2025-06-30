@@ -100,6 +100,7 @@ router.get(
  *       500:
  *         description: Lỗi server
  */
+// fix error create 
 router.post(
   "/create-route",
   checkPermission(["SUPER", "MANAGER_ROUTER_ADMIN"]),
@@ -167,6 +168,7 @@ router.post(
  *       500:
  *         description: Lỗi server
  */
+// fix error update
 router.put(
   "/update-route",
   checkPermission(["SUPER", "MANAGER_ROUTER_ADMIN"]),
@@ -198,6 +200,7 @@ router.put(
  *       500:
  *         description: Lỗi server
  */
+// fix error delete
 router.delete(
   "/delete-route/:id",
   checkPermission(["SUPER", "MANAGER_ROUTER_ADMIN"]),

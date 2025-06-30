@@ -20,7 +20,7 @@ class SystemController {
       resExport(MESSAGE.ERROR.status, e.message, null, res);
     }
   }
-
+  // fix error update
   async updateRoute(req, res) {
     try {
       const resData = await systemService.updateRoute(req.body);
