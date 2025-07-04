@@ -32,6 +32,20 @@ class AuthController {
     }
   }
 
+  async getDetailUser(req, res) {
+    try {
+      const res_data = await authServices.getUserByID(req.params.id);
+      resExport(
+        MESSAGE.SUCCESS.status,
+        "Lấy thông tin người dùng thành công",
+        res_data,
+        res
+      );
+    } catch (e) {
+      resExport(500, e.message, null, res);
+    }
+  }
+
   async updateNameUser(req, res) {
     try {
       const resData = await authServices.updateNameUser(
@@ -56,10 +70,36 @@ class AuthController {
     }
   }
 
+  async updateEmail(req, res) {
+    try {
+      const resData = await authServices.updateEmail(req.params.id, req.body);
+      resExport(200, "email updated successfully", resData, res);
+    } catch (error) {
+      resExport(500, error.message, null, res);
+    }
+  }
+
   async updateAvatar(req, res) {
     try {
       const resData = await authServices.updateAvatar(req.params.id, req.body);
       resExport(200, "Avatar updated successfully", resData, res);
+    } catch (error) {
+      resExport(500, error.message, null, res);
+    }
+  }
+  async updatePhone(req, res) {
+    try {
+      const resData = await authServices.updatePhone(req.params.id, req.body);
+      resExport(200, "Phone updated successfully", resData, res);
+    } catch (error) {
+      resExport(500, error.message, null, res);
+    }
+  }
+
+  async updateAddress(req, res) {
+    try {
+      const resData = await authServices.updateAddress(req.params.id, req.body);
+      resExport(200, "Address updated successfully", resData, res);
     } catch (error) {
       resExport(500, error.message, null, res);
     }
@@ -69,6 +109,15 @@ class AuthController {
     try {
       const resData = await authServices.updateGender(req.params.id, req.body);
       resExport(200, "Gender updated successfully", resData, res);
+    } catch (error) {
+      resExport(500, error.message, null, res);
+    }
+  }
+
+  async updateDob(req, res) {
+    try {
+      const resData = await authServices.updateDob(req.params.id, req.body);
+      resExport(200, "DateOfBirth updated successfully", resData, res);
     } catch (error) {
       resExport(500, error.message, null, res);
     }
